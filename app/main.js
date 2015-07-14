@@ -5,7 +5,7 @@ var app = angular.module("main", [
 app.run(function($rootScope, $location) {
 
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
-        if (!$rootScope.username) {
+        if (!$rootScope.user.username) {
             $location.path('/login')
         }
     })
