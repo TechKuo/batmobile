@@ -1,15 +1,17 @@
-var app = angular.module("main", []).run(function($rootScope) {
-	$rootScope.user = {
-		username: "",
-		password: "",
-		posts: ""
-	};
-});
+var app = angular.module("main", []);
 
 $(document).ready(function () {
 	$('[data-toggle="offcanvas"]').click(function () {
 		$('.row-offcanvas').toggleClass('active')
 	});
+});
+
+app.run(function($rootScope, $location) {
+		$rootScope.$on('$locationChangeStart', function(event, next, current) {
+			if (!localStorage.loggedIn) {
+				$location.path('/login')
+			}
+		})
 });
 
 app.controller("ctrl", function($scope) {
@@ -43,5 +45,5 @@ app.controller("ctrl", function($scope) {
 	$scope.init = function() {
 		Parse.initialize("MOBxFrwSUvNUxvglhXSE92Dw2cRtPgo7vfDNjw1r", "nVZcYWW5VoSp3As1SJeOqlwfksRdlSJr2xGZjjv0");
 	};
-	
+
 });
