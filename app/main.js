@@ -13,7 +13,7 @@ app.run(function($rootScope, $location) {
 	Parse.initialize("MOBxFrwSUvNUxvglhXSE92Dw2cRtPgo7vfDNjw1r", "nVZcYWW5VoSp3As1SJeOqlwfksRdlSJr2xGZjjv0");
 
     $rootScope.$on('$locationChangeStart', function(event, next, current) {
-        if (!$rootScope.user.loggedOn) {
+        if (!localStorage.loggedin) {
             $location.path('/login')
         }
     })
