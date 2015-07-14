@@ -1,67 +1,28 @@
 <html>
-	<head>
-		<title>BatMobile</title>
-		
-		<script src="lib/jquery.js"></script>
-		
-		<script src="lib/parse.1.5.0.min.js"></script>
-		
-		<link href="lib/bootstrap.min.css" rel="stylesheet">
-		<script src="lib/bootstrap.min.js"></script>
-		<script src="css/index.css"></script>
-		<script src="lib/angular-min-1.3.14.js"></script>
-		<script src="app/main.js"></script>
-	</head>
+<head>
+	<title>BATmobile</title>
+
+	<script src="lib/jquery.js"></script>
+
+	<script src="lib/parse.1.5.0.min.js"></script>
+
+	<link href="lib/bootstrap.min.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+	<script src="lib/bootstrap.min.js"></script>
+	<script src="lib/angular-min-1.3.14.js"></script>
+	<script src="app/main.js"></script>
+</head>
 	
-	<body ng-app="main" ng-controller="ctrl" ng-init="init()">
-		<input type="button" class="btn btn-positive" value="click" ng-click="create()">
-		<nav class="navbar navbar-fixed-top navbar-inverse">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">BATmobile</a>
-				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about">About</a></li>
-					</ul>
-				</div><!-- /.nav-collapse -->
-			</div><!-- /.container -->
-		</nav><!-- /.navbar -->
-
-		<div class="container">
-			<div class="row row-offcanvas row-offcanvas-right">
-				<div ng-controller="mainPage" class="col-xs-12 col-sm-9">
-						<p class="pull-right visible-xs">
-							<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-						</p>
-					<div class="jumbotron">
-						<h1>Welcome to BATmobile!</h1>
-						<p>Click on the links to the right to go to a topic. Popular questions are posted below.</p>
-					</div>
-					<div class="row">
-						<div ng-repeat="question in popular.questions" class="col-xs-6 col-lg-4">
-							<h2>{{question.title}}</h2>
-							<p>{{question.description}}</p>
-							<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-						</div><!--/.col-xs-6.col-lg-4-->
-					</div><!--/row-->
-				</div><!--/.col-xs-12.col-sm-9-->
-
-                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-                    <div sidebar-dir></div>
-                </div><!--/.sidebar-offcanvas-->
-            </div><!--/row-->
-            <hr>
-            <footer>
-                <p>&copy; Company 2014</p>
-            </footer>
-        </div><!--/.container-->
-	</body>
+<body>
+	<div ng-view></div>
+	<script src="app/main.js"></script>
+	<script src="app/routes.js"></script>
+	<script src="app/components/about/aboutController.js"></script>
+	<script src="app/components/create/createController.js"></script>
+	<script src="app/components/home/homeController.js"></script>
+	<script src="app/components/login/loginController.js"></script>
+	<script src="app/components/question/questionController.js"></script>
+	<script src="app/components/topic/topicController.js"></script>
+	<script src="app/shared/sidebar/sidebar-directive.js"></script>
+</body>
 </html>
