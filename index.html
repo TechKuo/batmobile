@@ -1,4 +1,4 @@
-<html>
+<html ng-app="main">
 <head>
 	<title>BATmobile</title>
 
@@ -9,20 +9,22 @@
 	<link href="lib/bootstrap.min.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
 	<script src="lib/bootstrap.min.js"></script>
-	<script src="lib/angular-min-1.3.14.js"></script>
-	<script src="app/main.js"></script>
-</head>
-	
-<body>
-	<div ng-view></div>
+	<script src="lib/angular.js"></script>
+	<script src="lib/angular-route.js"></script>
+
 	<script src="app/main.js"></script>
 	<script src="app/routes.js"></script>
 	<script src="app/components/about/aboutController.js"></script>
 	<script src="app/components/create/createController.js"></script>
-	<script src="app/components/home/homeController.js"></script>
+	<script src="app/components/home/home-directive.js"></script>
 	<script src="app/components/login/loginController.js"></script>
 	<script src="app/components/question/questionController.js"></script>
 	<script src="app/components/topic/topicController.js"></script>
 	<script src="app/shared/sidebar/sidebar-directive.js"></script>
+	<script src="app/shared/navbar/navbar-directive.js"></script>
+</head>
+	
+<body>
+	<div ng-view></div>
 </body>
 </html>
