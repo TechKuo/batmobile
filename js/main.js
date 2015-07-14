@@ -5,6 +5,7 @@ app.controller("ctrl", function($scope) {
 	$scope.user = {
 		username: "",
 		password: "",
+		loggedIn: false,
 		posts: []
 	};
 	
@@ -13,11 +14,23 @@ app.controller("ctrl", function($scope) {
 	};
 	
 	$scope.login = function() {
-		
-		
-		var PostObject = Parse.Object.extend("Posts");
-		var newPost = new PostObject();
-		newPost.set("text", "This is a test");
-		newPost.save();
+		var userClass = Parse.Object.extend("Users");
+		var query = new Parse.Query(userClass);
+
+		query.find({
+			success: function(results) {
+				for (var i=0; i<results.length; i++) {
+					if (results[i].get("username") == $scope.user.username) {
+						if (results[i].get("password") == $scope.user.password) {
+							$scope.user.loggedIn = true;
+							return;
+						}
+					}
+				}
+				alert("Invalid Username or Password!");
+			}, error: function(results) {
+				alert("Unknown error logging in!");
+			}
+		});
 	};
 });
