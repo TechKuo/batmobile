@@ -10,7 +10,7 @@
 	
 	function sidebar() {
 		var directive = {
-				restrict: 'E',				
+				restrict: 'E',		
 				templateUrl: 'app/shared/sidebar/sidebar-view.html',
 				controller: sidebarController, 
 				controllerAs: 'sidebarController'
