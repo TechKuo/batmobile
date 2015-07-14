@@ -1,5 +1,11 @@
 var app = angular.module("main", []);
 
+$(document).ready(function () {
+	$('[data-toggle="offcanvas"]').click(function () {
+		$('.row-offcanvas').toggleClass('active')
+	});
+});
+
 app.controller("ctrl", function($scope) {
 	
 	$scope.user = {
