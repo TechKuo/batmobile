@@ -1,4 +1,10 @@
-var app = angular.module("main", []);
+var app = angular.module("main", []).run(function($rootScope) {
+	$rootScope.user = {
+		username: "",
+		password: "",
+		posts: ""
+	};
+});
 
 $(document).ready(function () {
 	$('[data-toggle="offcanvas"]').click(function () {
@@ -38,24 +44,4 @@ app.controller("ctrl", function($scope) {
 		Parse.initialize("MOBxFrwSUvNUxvglhXSE92Dw2cRtPgo7vfDNjw1r", "nVZcYWW5VoSp3As1SJeOqlwfksRdlSJr2xGZjjv0");
 	};
 	
-	$scope.login = function() {
-		var UserClass = Parse.Object.extend("Users");
-		var query = new Parse.Query(UserClass);
-
-		query.find({
-			success: function(results) {
-				for (var i=0; i<results.length; i++) {
-					if (results[i].get("username") == $scope.user.username) {
-						if (results[i].get("password") == $scope.user.password) {
-							$scope.user.loggedIn = true;
-							return;
-						}
-					}
-				}
-				alert("Invalid Username or Password!");
-			}, error: function(results) {
-				alert("Unknown error logging in!");
-			}
-		});
-	};
 });
