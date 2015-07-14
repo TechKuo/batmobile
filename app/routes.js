@@ -10,7 +10,8 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/components/home/home-view.html'
         })
         .when('/login', {
-            templateUrl: 'app/components/login/login-view.html'
+            templateUrl: 'app/components/login/login-view.html',
+			controller: 'loginController'
         })
         .otherwise({
             redirectTo: '/'
