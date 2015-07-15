@@ -7,7 +7,8 @@ var app = angular.module('main');
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'app/components/home/home-view.html'
+            templateUrl: 'app/components/home/home-view.html',
+			controller: 'homeController'
         })
         .when('/login', {
             templateUrl: 'app/components/login/login-view.html',
