@@ -1,5 +1,8 @@
+
+
 angular.module("main").controller("homeController", function($scope) {
 	$scope.posts = [];
+    $scope.isToggled = false;
 	
 	var PostClass = Parse.Object.extend("Posts");
 	var query = new Parse.Query(PostClass);
@@ -19,5 +22,4 @@ angular.module("main").controller("homeController", function($scope) {
 			alert("Error retrieving top posts!");
 		}
 	});
-	
 });

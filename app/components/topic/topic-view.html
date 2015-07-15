@@ -2,11 +2,11 @@
 <navbar></navbar>
 
 <div class="container">
-    <div class="row row-offcanvas row-offcanvas-right">
+    <div ng-class="isToggled ? 'row row-offcanvas row-offcanvas-right active' : 'row row-offcanvas row-offcanvas-right'">
 
         <div ng-controller="topicController" class="col-xs-12 col-sm-9">
             <p class="pull-right visible-xs">
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                <button type="button" ng-click="isToggled = !isToggled" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
             </p>
             <div class="jumbotron">
                 <h1>{{topic.title}}</h1>
