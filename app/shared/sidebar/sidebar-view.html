@@ -1,16 +1,33 @@
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+<!--<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 	<div class="list-group">
-		<a ng-href="#/topic/Agile" class="list-group-item active">Agile</a>
-		<a ng-href="#/topic/Angular" class="list-group-item">Angular</a>
-		<a ng-href="#/topic/BigData" class="list-group-item">Big Data</a>
-		<a ng-href="#/topic/CloudComputing" class="list-group-item">Cloud Computing</a>
-		<a ng-href="#/topic/Java" class="list-group-item">Java</a>
-		<a ng-href="#/topic/JSQuery" class="list-group-item">Javascript/JQuery</a>
-		<a ng-href="#/topic/HTML" class="list-group-item">HTML/CSS</a>
-		<a ng-href="#/topic/Python" class="list-group-item">Python</a>
-		<a ng-href="#/topic/SQL" class="list-group-item">SQL</a>
-		<a ng-href="#/topic/UI" class="list-group-item">UI/UX</a>
-		<a ng-href="#/topic/UNIX" class="list-group-item">UNIX</a>
-		<a ng-href="#/topic/NET" class="list-group-item">.NET Framework</a>
+		<a ng-href="#/topic/Agile" ng-class="{active: $route.current.activetab == 'Agile'}" class="list-group-item">Agile</a>
+		<a ng-href="#/topic/Angular"  ng-class="{active: $route.current.activetab == 'Angular'}" class="list-group-item">Angular</a>
+		<a ng-href="#/topic/BigData"  ng-class="{active: $route.current.activetab == 'BigData'}" class="list-group-item">Big Data</a>
+		<a ng-href="#/topic/CloudComputing"  ng-class="{active: $route.current.activetab == 'CloudComputing'}" class="list-group-item">Cloud Computing</a>
+		<a ng-href="#/topic/Java"   ng-class="{active: $route.current.activetab == 'Java'}" class="list-group-item">Java</a>
+		<a ng-href="#/topic/JSQuery"  ng-class="{active: $route.current.activetab == 'JSQuery'}" class="list-group-item">Javascript/JQuery</a>
+		<a ng-href="#/topic/HTML"  ng-class="{active: $route.current.activetab == 'HTML'}" class="list-group-item">HTML/CSS</a>
+		<a ng-href="#/topic/Python"  ng-class="{active: $route.current.activetab == 'Python'}" class="list-group-item">Python</a>
+		<a ng-href="#/topic/SQL"  ng-class="{active: $route.current.activetab == 'SQL'}" class="list-group-item">SQL</a>
+		<a ng-href="#/topic/UI"  ng-class="{active: $route.current.activetab == 'UI'}" class="list-group-item">UI/UX</a>
+		<a ng-href="#/topic/UNIX"  ng-class="{active: $route.current.activetab == 'UNIX'}" class="list-group-item">UNIX</a>
+		<a ng-href="#/topic/NET"  ng-class="{active: $route.current.activetab == 'NET'}" class="list-group-item">.NET Framework</a>
+	</div>
+</div> <!--/.sidebar-offcanvas-->
+
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+	<div class="list-group" ng-controller="activeController">
+		<a ng-href="#/topic/Agile" ng-click="window.activeTab = 'agile'" ng-class="{active: window.activeTab == 'agile'}" class="list-group-item">Agile</a>
+		<a ng-href="#/topic/Angular" ng-click="window.activeTab = 'angular'" ng-class="{active: window.activeTab == 'angular'}" class="list-group-item">Angular</a>
+		<a ng-href="#/topic/BigData" ng-click="window.activeTab = 'bigdata'" ng-class="{active: window.activeTab == 'bigdata'}" class="list-group-item">Big Data</a>
+		<a ng-href="#/topic/CloudComputing" ng-click="window.activeTab = 'cloud'" ng-class="{active: window.activeTab == 'cloud'}" class="list-group-item">Cloud Computing</a>
+		<a ng-href="#/topic/Java" ng-click="window.activeTab = 'java'"  ng-class="{active: window.activeTab == 'java'}" class="list-group-item">Java</a>
+		<a ng-href="#/topic/JSQuery" ng-click="window.activeTab = 'js'" ng-class="{active: window.activeTab == 'js'}" class="list-group-item">Javascript/JQuery</a>
+		<a ng-href="#/topic/HTML" ng-click="window.activeTab = 'html'" ng-class="{active: window.activeTab == 'html'}" class="list-group-item">HTML/CSS</a>
+		<a ng-href="#/topic/Python" ng-click="window.activeTab = 'python'" ng-class="{active: window.activeTab == 'python'}" class="list-group-item">Python</a>
+		<a ng-href="#/topic/SQL" ng-click="window.activeTab = 'sql'" ng-class="{active: window.activeTab == 'sql'}" class="list-group-item">SQL</a>
+		<a ng-href="#/topic/UI" ng-click="window.activeTab = 'ui'" ng-class="{active: window.activeTab == 'ui'}" class="list-group-item">UI/UX</a>
+		<a ng-href="#/topic/UNIX" ng-click="window.activeTab = 'unix'" ng-class="{active: window.activeTab == 'unix'}" class="list-group-item">UNIX</a>
+		<a ng-href="#/topic/NET" ng-click="window.activeTab = 'net'" ng-class="{active: window.activeTab == 'net'}" class="list-group-item">.NET Framework</a>
 	</div>
 </div> <!--/.sidebar-offcanvas-->

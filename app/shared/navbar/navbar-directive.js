@@ -24,6 +24,8 @@
 	function navbarController($scope, $location) {
 		var vm = this;	
 		vm.name = 'navbarController';
+
+		$scope.searchText = "";
 	
 		
 		initialize();	
@@ -36,6 +38,11 @@
 		$scope.logout = function() {
 			delete localStorage.loggedin;
 			$location.path('/login');
+		};
+
+		$scope.searchQuestions = function() {
+			console.log('search bar pressed');
+			$location.path('/search/' + $scope.searchText);
 		}
 			
 	};

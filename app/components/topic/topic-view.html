@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row row-offcanvas row-offcanvas-right">
 
-        <div ng-controller="topicPage" class="col-xs-12 col-sm-9">
+        <div ng-controller="topicController" class="col-xs-12 col-sm-9">
             <p class="pull-right visible-xs">
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
             </p>
@@ -21,11 +21,11 @@
             </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-            <div sidebar-dir></div>
-        </div><!--/.sidebar-offcanvas-->
+        <sidebar></sidebar>
+        <hr>
+
     </div><!--/row-->
-    <hr>
+
     <footer>
         <p>&copy; Company 2014</p>
     </footer>
