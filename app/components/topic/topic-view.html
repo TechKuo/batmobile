@@ -12,12 +12,39 @@
                 <h1>{{topic.title}}</h1>
             </div>
             <div class="row">
-                <div ng-repeat="question in topic.questions" class="col-xs-6 col-lg-4">
-                    <h2>{{question.title}}</h2>
-                    <p>{{question.description}}</p>
-                    <p><a class="btn btn-default" href="#/{question.title}" role="button">View Question &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-            </div><!--/row-->
+                <div class="col-md-4 col-lg-4" ng-show="topic.questions[0] != undefined">
+                    <h2>{{topic.questions[0].title}}</h2>
+                    <p>{{topic.questions[0].description}}</p>
+                    <p><a class="btn btn-default details" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4 col-lg-4" ng-show="topic.questions[1] != undefined">
+                    <h2>{{topic.questions[1].title}}</h2>
+                    <p>{{topic.questions[1].description}}</p>
+                    <p><a class="btn btn-default details" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4 col-lg-4" ng-show="topic.questions[2] != undefined">
+                    <h2>{{topic.questions[2].title}}</h2>
+                    <p>{{topic.questions[2].description}}</p>
+                    <p><a class="btn btn-default details" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-lg-4" ng-show="topic.questions[3] != undefined">
+                    <h2>{{topic.questions[3].title}}</h2>
+                    <p>{{topic.questions[3].description}}</p>
+                    <p><a class="btn btn-default details" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4 col-lg-4" ng-show="topic.questions[4] != undefined">
+                    <h2>{{topic.questions[4].title}}</h2>
+                    <p>{{topic.questions[4].description}}</p>
+                    <p><a class="btn btn-default details" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4 col-lg-4" ng-show="topic.questions[5] != undefined">
+                    <h2>{{topic.questions[5].title}}</h2>
+                    <p>{{topic.questions[5].description}}</p>
+                    <p><a class="btn btn-default details" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+                </div>
+            </div>
         </div><!--/.col-xs-12.col-sm-9-->
 
         <sidebar></sidebar>
@@ -26,7 +53,7 @@
     </div><!--/row-->
 
     <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; SegFault 2015</p>
     </footer>
 
 </div><!--/.container-->
