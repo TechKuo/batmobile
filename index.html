@@ -7,10 +7,17 @@
 	<script src="lib/parse.1.5.0.min.js"></script>
 
 	<link href="lib/bootstrap.min.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
 	<link href="css/index.css" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
 	<script src="lib/bootstrap.min.js"></script>
 	<script src="lib/angular.js"></script>
 	<script src="lib/angular-route.js"></script>
+
+</head>
+	
+<body>
+	<div ng-view></div>
 
 	<script src="app/main.js"></script>
 	<script src="app/routes.js"></script>
@@ -22,9 +29,5 @@
 	<script src="app/components/topic/topicController.js"></script>
 	<script src="app/shared/sidebar/sidebar-directive.js"></script>
 	<script src="app/shared/navbar/navbar-directive.js"></script>
-</head>
-	
-<body>
-	<div ng-view></div>
 </body>
 </html>
