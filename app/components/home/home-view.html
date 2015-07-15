@@ -11,9 +11,36 @@
 			<p>BATmobile is a question and answer site for AT&T employees working on improving their knowledge/skills through Fast Path. Explore topics on the right and view popular questions below.</p>
 		</div>
 		<div class="row">
-			<div class="col-xs-6 col-lg-4" ng-repeat="post in posts">
-				<h2>{{post.text}}</h2>
-				<p>{{post.description}}</p>
+			<div class="col-md-4 col-lg-4" ng-show="posts[0] != undefined">
+				<h2>{{posts[0].text}}</h2>
+				<p>{{posts[0].description}}</p>
+				<p><a class="btn btn-default" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-4 col-lg-4" ng-show="posts[1] != undefined">
+				<h2>{{posts[1].text}}</h2>
+				<p>{{posts[1].description}}</p>
+				<p><a class="btn btn-default" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-4 col-lg-4" ng-show="posts[2] != undefined">
+				<h2>{{posts[2].text}}</h2>
+				<p>{{posts[2].description}}</p>
+				<p><a class="btn btn-default" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-lg-4" ng-show="posts[3] != undefined">
+				<h2>{{posts[3].text}}</h2>
+				<p>{{posts[3].description}}</p>
+				<p><a class="btn btn-default" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-4 col-lg-4" ng-show="posts[4] != undefined">
+				<h2>{{posts[4].text}}</h2>
+				<p>{{posts[4].description}}</p>
+				<p><a class="btn btn-default" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-4 col-lg-4" ng-show="posts[5] != undefined">
+				<h2>{{posts[5].text}}</h2>
+				<p>{{posts[5].description}}</p>
 				<p><a class="btn btn-default" href="#/question/:{{post.id}}" role="button">View details &raquo;</a></p>
 			</div>
 		</div>
