@@ -1,37 +1,23 @@
-/**
- * Created by tk685f on 7/14/2015.
- */
+angular.module("main").controller("homeController", function($scope) {
+	$scope.posts = [];
+	
+	var PostClass = Parse.Object.extend("Posts");
+	var query = new Parse.Query(PostClass);
 
-(function () {
+	query.find({
+		success: function(results) {
+			$scope.posts = [];
+			for (var i=0; i<results.length; i++) {
+				var newPost = {text: "", description: "", id: ""};
+				newPost.text = results[i].get("text");
+				newPost.description = results[i].get("description");
+				newPost.id = results[i].get("postId");
+				$scope.posts.push(newPost);
+			}
+			$scope.$apply();
+		}, error: function(results) {
+			alert("Error retrieving top posts!");
+		}
+	});
 	
-	'use strict';
-	
-	angular.module('main').directive('home', home);
-	
-	function home() {
-		var directive = {
-				restrict: 'E',		
-				templateUrl: 'app/shared/home/home-view.html',
-				controller: homeController, 
-				controllerAs: 'homeController'
-		};
-		
-		return directive;
-	}
-	
-	homeController.$inject = ['$scope'];
-	
-	function homeController($scope) {
-		var vm = this;	
-		vm.name = 'homeController';
-	
-		
-		initialize();	
-		
-		///////////////////////////
-
-		function initialize() {
-		};
-			
-	};
-})();
+});
