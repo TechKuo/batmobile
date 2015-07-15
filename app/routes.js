@@ -17,6 +17,9 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/components/question/question-view.html',
             controller: 'questionController'
         })
+        .when('/topic/{topicName}', {
+            templateUrl: ''
+        })
         .otherwise({
             redirectTo: '/'
         });
