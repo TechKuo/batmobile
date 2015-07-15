@@ -23,11 +23,11 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'createController'
         })
         .when('/topic/:topicName', {
-            templateUrl: '/app/components/topic/topic-view.html',
+            templateUrl: 'app/components/topic/topic-view.html',
             controller: 'topicController'
         })
         .when('/search/:searchParams', {
-            templateUrl: '/app/components/result/result-view.html',
+            templateUrl: 'app/components/result/result-view.html',
             controller: 'resultController'
         })
         .otherwise({
