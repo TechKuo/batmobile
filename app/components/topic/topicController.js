@@ -1,6 +1,7 @@
 angular.module("main").controller("topicController", ["$scope", "$rootScope", "$routeParams", function($scope, $rootScope, $routeParams) {
 	$scope.topic = {title: $routeParams.topicName, questions: []};
-	
+	$scope.isToggled = false;
+
 	var PostClass = Parse.Object.extend("Posts");
 	var query = new Parse.Query(PostClass);
 
