@@ -18,7 +18,9 @@ angular.module("main").controller("questionController", ['$scope', '$rootScope',
 			$scope.title = object.attributes.text;
 			$scope.user = object.attributes.user;
 			$scope.description = object.attributes.description;
-			$scope.commentIds = object.attributes.comments.split(", ");
+			var commentIdString = object.attributes.comments;
+			if (commentIdString != undefined && commentIdString != "") $scope.commentIds = object.attributes.comments.split(", ");
+			else $scope.commentIds = [];
 			$scope.$apply();
 		}, error: function(object) {
 			alert("Error retrieving question info!");
