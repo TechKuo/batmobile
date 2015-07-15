@@ -3,10 +3,18 @@
 	width: 85%;
 	margin-right: auto;
 	margin-left: auto;
-	padding: 30px 15px;
+	padding: 10px 15px;
 	border-radius: 6px;
 }
 
+form {
+	width: 85%;
+}
+
 label {
-	text-align: left;
+	float: left;
+}
+
+.btn-primary {
+	width: 100%;
 }
