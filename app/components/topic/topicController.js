@@ -4,8 +4,10 @@
 
 var app = angular.module('main');
 
-app.controller("topicPage", function(){
-    $scope.topic = {};//obtain topic from url and db here
+app.controller("topicController",
+['$scope', '$routeParams',
+function($scope, $routeParams) {
 
+    $scope.topicName = $routeParams.topicName;
 
-});
+}]);
