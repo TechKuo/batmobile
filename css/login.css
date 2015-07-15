@@ -1,12 +1,11 @@
 body {
 	background-color: #222;
-	padding-top: 7.5em;
 }
 
 img {
-	width: 52em;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	padding-right: 5em;
+	padding: 7.5em 5% 0em 0em;
 	display: block;
 }
