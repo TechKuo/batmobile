@@ -1,7 +1,15 @@
-<img ng-src="images/batmobile_logo_small.png">
+<link rel="stylesheet" href="css/login.css">
 
 <div class="container">
-	<input type="text" placeholder="Username" ng-model="loginInfo.username">
-    <input type="password" placeholder="Password" ng-model="loginInfo.password">
-    <input type="button" ng-click="login()" value="Login">
+
+	<img ng-src="images/batmobile_logo_large.png">
+
+	<form novalidate class="simple-form">
+		<input type="text" placeholder="Username" ng-model="loginInfo.username">
+		<br/>
+	    <input type="password" placeholder="Password" ng-model="loginInfo.password">
+	    <br/>
+	    <input type="button" class="btn btn-primary" ng-click="login()" value="Login">
+	</form>
+
 </div>

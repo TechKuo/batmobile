@@ -2,3 +2,24 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+form {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+input{
+	color: #656565;
+	width: 20em;
+	height: 2.5em;
+	margin-top: 1em;
+	padding: 6px 12px;
+	line-height: 1.42857;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+}
+
+.btn {
+	margin-top: 2em;
+}
