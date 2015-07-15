@@ -1,6 +1,8 @@
-angular.module("main").controller("questionController", function($scope, $rootScope, $location) {
+angular.module("main").controller("questionController", ['$scope', '$rootScope', '$location', '$routeParams', function($scope, $rootScope, $location, $routeParams) {
 	
-	$scope.id = "9bLx3Hv5Xb";
+	//$scope.id = "9bLx3Hv5Xb";
+	$scope.id = $routeParams.postId;
+	console.log($routeParams.postId);
 	$scope.title = "";
 	$scope.user = "";
 	$scope.description = "";
@@ -81,4 +83,4 @@ angular.module("main").controller("questionController", function($scope, $rootSc
 			}
 		});
 	};
-});
+}]);
