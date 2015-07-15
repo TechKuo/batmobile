@@ -12,3 +12,12 @@
 	color: black;
 	background-color: #f1f1f1;
 }
+
+.searchbar {
+	float:right;
+}
+
+.search_button {
+	width: 75px;
+}
+
