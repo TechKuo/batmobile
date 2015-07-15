@@ -1,7 +1,12 @@
 .create {
+	text-align: center;
+	width: 85%;
 	margin-right: auto;
 	margin-left: auto;
-	width: 66%;
-	text-align: center;
-	padding: 5px;
+	padding: 30px 15px;
+	border-radius: 6px;
+}
+
+label {
+	text-align: left;
 }
