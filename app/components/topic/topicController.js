@@ -2,12 +2,21 @@
  * Created by jx685f on 7/14/2015.
  */
 
-var app = angular.module('main');
+angular.module("main").controller("topicController", function($scope, $rootScope) {
 
-app.controller("topicController",
-['$scope', '$routeParams',
-function($scope, $routeParams) {
+    $scope.topic = {};
 
-    $scope.topicName = $routeParams.topicName;
+    $scope.getInfo = function () {
+        var query = new Parse.Query("Topic")
+        {
+            query.get($rootScope.topic.id, {
+                success: function (object) {
+                    $scope.topic = object.attributes.topic;
+                }, error: function (object) {
+                    alert("Error retrieving topic info!");
+                }
+            })
+        };
+    };
 
-}]);
+});
