@@ -1,18 +1,30 @@
-/**
- * Created by jx685f on 7/14/2015.
- */
+angular.module("main").controller("createController", function($scope, $rootScope) {
+	$scope.info = {
+		topic: "",
+		text: "",
+		description: ""
+	};
+	
+	$scope.createQuestion = function() {
+		var PostClass = Parse.Object.extend("Posts");
+		var newPost = new PostClass();
 
-var app = angular.module('main');
+		newPost.set("text", $scope.info.text);
+		newPost.set("topic", $scope.info.topic);
+		newPost.set("description", $scope.info.description);
+		newPost.set("user", "am790d");
 
-app.controller('createController',
-['$scope',
-function($scope) {
-
-    $scope.question = {};
-
-    $scope.createQuestion = function() {
-        var question = JSON.parse(JSON.stringify($scope.question));
-        console.log(question);
-        $scope.question = {};
-    }
-}]);
+		$scope.info.topic = "";
+		$scope.info.text = "";
+		$scope.info.description = "";
+		
+		newPost.save(null,{
+			success: function(result) {
+				newPost.set("postId", result.id);
+				newPost.save();
+			}, error: function(result) {
+				alert("Error creating post!");
+			}
+		});
+	};
+});

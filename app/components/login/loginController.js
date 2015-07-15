@@ -9,7 +9,7 @@ angular.module("main").controller("loginController", function($scope, $rootScope
 		var UserClass = Parse.Object.extend("Users");
 		var query = new Parse.Query(UserClass);
 		
-		query.find({
+		query.find( {
 			success: function(results) {
 				console.log(results);
 				for (var i=0; i<results.length; i++) {
