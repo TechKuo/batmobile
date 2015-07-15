@@ -17,6 +17,10 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/components/question/question-view.html',
             controller: 'questionController'
         })
+        .when('/create', {
+            templateUrl: 'app/components/create/create-view.html',
+            controller: 'createController'
+        })
         .when('/topic/:topicName', {
             templateUrl: '/app/components/topic/topic-view.html',
             controller: 'topicController'
