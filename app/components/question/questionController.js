@@ -2,7 +2,6 @@ angular.module("main").controller("questionController", ['$scope', '$rootScope',
 	
 	//$scope.id = "9bLx3Hv5Xb";
 	$scope.id = $routeParams.postId;
-	console.log($routeParams.postId);
 	$scope.title = "";
 	$scope.user = "";
 	$scope.description = "";
