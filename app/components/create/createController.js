@@ -1,4 +1,4 @@
-angular.module("main").controller("createController", function($scope, $rootScope) {
+angular.module("main").controller("createController", function($scope, $rootScope, $location) {
 	$scope.info = {
 		topic: "",
 		text: "",
@@ -12,7 +12,7 @@ angular.module("main").controller("createController", function($scope, $rootScop
 		newPost.set("text", $scope.info.text);
 		newPost.set("topic", $scope.info.topic);
 		newPost.set("description", $scope.info.description);
-		newPost.set("user", "am790d");
+		newPost.set("user", localStorage.username);
 
 		$scope.info.topic = "";
 		$scope.info.text = "";

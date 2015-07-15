@@ -18,7 +18,8 @@ angular.module("main").controller("loginController", function($scope, $rootScope
 							$rootScope.user.username = $scope.loginInfo.username;
 							$rootScope.user.password = $scope.loginInfo.password;
 							$rootScope.user.loggedOn = true;
-						localStorage.loggedin = true;
+							localStorage.loggedin = true;
+							localStorage.username = $scope.loginInfo.username;
 							$rootScope.user.posts = results[i].get("posts");
 							$location.path('/');
 					}
