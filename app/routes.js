@@ -13,6 +13,10 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/components/login/login-view.html',
 			controller: 'loginController'
         })
+        .when('/question', {
+            templateUrl: 'app/components/question/question-view.html',
+            controller: 'questionController'
+        })
         .otherwise({
             redirectTo: '/'
         });
