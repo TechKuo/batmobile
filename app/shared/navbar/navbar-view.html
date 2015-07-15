@@ -18,8 +18,10 @@
         </ul>
         <!--<span class="searchbar">-->
           <form novalidate>
-              <input type="text" ng-model="search.text" placeholder="Search...">
+            <div class="bar">
               <input type="submit" class="search_btn btn-default" ng-click="searchQuestions(search)" value="Search">
+              <input type="text" class="searchbar" ng-model="search.text" placeholder="Search...">
+            </div>
           </form>
       <!--</span>-->
       </div><!-- /.nav-collapse -->

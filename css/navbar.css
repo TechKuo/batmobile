@@ -13,13 +13,19 @@
 	background-color: #f1f1f1;
 }
 
-.searchbar {
-	float:right;
+.bar {
+	margin-top: 0.55em;
 }
 
+.searchbar {
+	float:right;
+	width: 50%;
+	margin: 0px;
+}
 
 .search_btn {
-	margin: 0px;
 	width: 75px;
+	margin: 0px;
+	float: right;
 }
 
