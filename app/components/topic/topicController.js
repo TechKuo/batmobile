@@ -92,7 +92,7 @@ angular.module("main").controller("topicController", function($scope, $rootScope
         ]
     });*/
 
-   /* $scope.getInfo = function () {
+    $scope.getInfo = function () {
         var query = new Parse.Query("Topic")
         {
             query.get($rootScope.topic.id, {
@@ -103,6 +103,6 @@ angular.module("main").controller("topicController", function($scope, $rootScope
                 }
             })
         };
-    };*/
+    };
 
 });
