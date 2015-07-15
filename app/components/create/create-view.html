@@ -2,25 +2,50 @@
 
 <navbar></navbar>
 <div class="content">
-    <form class="simple-form" novalidate>
+    <form class="form-horizontal" role="form" novalidate>
     <h1>New Question</h1>
-    <select>
-    	<option value="Agile">Agile</option>
-    	<option value="Angular">Angular</option>
-    	<option value="BigData">Big Data</option>
-    	<option value="CloudComputing">Cloud Computing</option>
-    	<option value="Java">Java</option>
-    	<option value="JSQuery">Javascript/JQuery</option>
-    	<option value="HTML">HTML/CSS</option>
-    	<option value="Python">Python</option>
-    	<option value="SQL">SQL</option>
-    	<option value="UI">UI/UX</option>
-    	<option value="UNIX">UNIX</option>
-    	<option value="NET">.NET Framework</option>
-    </select>
-		<br/>
-    <input type="text" ng-model="question.question" placeholder="Enter Question Here"><br/>
-    <textarea ng-model="question.text" rows="5" cols="20000" placeholder="Enter Question Description Here"></textarea><br/>
-    <button type="submit" class="btn btn-lg btn-spheres" ng-click="createQuestion()">CreateQuestion</button>
+    
+    <div class="form-group col-xs-12">
+        <label class="control-label col-xs-2" for="topic">Topic:</label>
+        <div class="col-xs-8">
+            <select class="form-control" id="topic">
+            	<option value="Agile">Agile</option>
+            	<option value="Angular">Angular</option>
+            	<option value="BigData">Big Data</option>
+            	<option value="CloudComputing">Cloud Computing</option>
+            	<option value="Java">Java</option>
+            	<option value="JSQuery">Javascript/JQuery</option>
+            	<option value="HTML">HTML/CSS</option>
+            	<option value="Python">Python</option>
+            	<option value="SQL">SQL</option>
+            	<option value="UI">UI/UX</option>
+            	<option value="UNIX">UNIX</option>
+            	<option value="NET">.NET Framework</option>
+            </select>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    
+    <div class="form-group col-xs-12">
+        <label class="control-label col-xs-2" for="question">Question:</label>
+        <div class="col-xs-8">
+            <input  class="form-control" id="question" type="text" ng-model="question.question" placeholder="Enter Question Here">
+        <div class="col-xs-2"></div>
+    </div>
+
+    <div class="col-xs-12 spacer"></div> 
+
+    <div class="form-group col-xs-12">
+        <label class="control-label col-xs-2" for="question-desc">Question Description:</label>
+        <div class="col-xs-8">
+            <textarea class="form-control" id="question-desc" ng-model="question.text" rows="5" placeholder="Enter Question Description Here"></textarea>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+
+    <div class="col-xs-12">
+        <button type="submit" class="btn btn-primary" ng-click="createQuestion()">Ask</button>
+    </div>
+
     </form>
 </div>
