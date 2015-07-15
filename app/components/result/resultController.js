@@ -26,7 +26,8 @@ function($scope, $routeParams) {
                     }).map(function(p) {
                         return {
                             text: p.get('text'),
-                            description: p.get('description')
+                            description: p.get('description'),
+							id: p.id
                         }
                     });
                     $scope.resultLen = $scope.posts.length;

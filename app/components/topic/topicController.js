@@ -12,7 +12,6 @@ angular.module("main").controller("topicController", ["$scope", "$rootScope", "$
 				newPost.text = results[i].get("text");
 				newPost.description = results[i].get("description");
 				newPost.id = results[i].get("postId");
-				alert(newPost.text+"\n"+newPost.description+"\n"+newPost.id+"\n"+results[i].get("topic"));
 				if (results[i].get("topic") == $scope.topic.title) $scope.topic.questions.push(newPost);
 			}
 			$scope.$apply();
