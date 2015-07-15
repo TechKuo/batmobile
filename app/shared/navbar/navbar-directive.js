@@ -19,9 +19,9 @@
 		return directive;
 	}
 	
-	navbarController.$inject = ['$scope'];
+	navbarController.$inject = ['$scope', '$location'];
 	
-	function navbarController($scope) {
+	function navbarController($scope, $location) {
 		var vm = this;	
 		vm.name = 'navbarController';
 	
@@ -32,6 +32,11 @@
 
 		function initialize() {
 		};
+
+		$scope.logout = function() {
+			delete localStorage.loggedin;
+			$location.path('/login');
+		}
 			
 	};
 })();

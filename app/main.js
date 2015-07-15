@@ -2,7 +2,7 @@ var app = angular.module("main", [
     'ngRoute'
 ]);
 
-app.run(function($rootScope, $location) {
+app.run(['$rootScope', '$location', function($rootScope, $location) {
 
 	$rootScope.user = {
 		username: "",
@@ -18,4 +18,4 @@ app.run(function($rootScope, $location) {
         }
     })
 
-});
+}]);
