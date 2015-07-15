@@ -25,7 +25,7 @@
 		var vm = this;	
 		vm.name = 'navbarController';
 
-		$scope.searchText = "";
+		$scope.search = {};
 	
 		
 		initialize();	
@@ -40,9 +40,9 @@
 			$location.path('/login');
 		};
 
-		$scope.searchQuestions = function() {
+		$scope.searchQuestions = function(search) {
 			console.log('search bar pressed');
-			$location.path('/search/' + $scope.searchText);
+			$location.path('/search/' + search.text);
 		}
 			
 	};
