@@ -1,6 +1,8 @@
-angular.module("main").controller("questionController", function($scope, $rootScope) {
+angular.module("main").controller("questionController", ['$scope', '$rootScope', '$location', '$routeParams', function($scope, $rootScope, $location, $routeParams) {
 	
-	$scope.id = "9bLx3Hv5Xb";
+	//$scope.id = "9bLx3Hv5Xb";
+	$scope.id = $routeParams.postId;
+	console.log($routeParams.postId);
 	$scope.title = "";
 	$scope.user = "";
 	$scope.description = "";
@@ -16,7 +18,9 @@ angular.module("main").controller("questionController", function($scope, $rootSc
 			$scope.title = object.attributes.text;
 			$scope.user = object.attributes.user;
 			$scope.description = object.attributes.description;
-			$scope.commentIds = object.attributes.comments.split(", ");
+			var commentIdString = object.attributes.comments;
+			if (commentIdString != undefined && commentIdString != "") $scope.commentIds = object.attributes.comments.split(", ");
+			else $scope.commentIds = [];
 			$scope.$apply();
 		}, error: function(object) {
 			alert("Error retrieving question info!");
@@ -56,7 +60,7 @@ angular.module("main").controller("questionController", function($scope, $rootSc
 		var newComment = new CommentClass();
 
 		newComment.set("text", $scope.newCommentText);
-		newComment.set("user", "am790d");
+		newComment.set("user", localStorage.username);
 		
 		newComment.save(null, {
 			success: function(result) {
@@ -81,4 +85,4 @@ angular.module("main").controller("questionController", function($scope, $rootSc
 			}
 		});
 	};
-});
+}]);

@@ -13,14 +13,17 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
+<<<<<<< HEAD
           <li class="active"><a href="#/profile">Profile</a></li>
+=======
+>>>>>>> 63d1625084b2fd0d181c30fff1a58c24fed88cfc
           <li><a ng-href="#/create">Ask</a></li>
           <li><a href="#" ng-click="logout()">Logout</a></li>
         </ul>
         <!--<span class="searchbar">-->
           <form novalidate>
-              <input type="text" ng-model="searchText" placeholder="Search...">
-              <input type="button" class="search_btn btn-default" ng-click="searchQuestions()" value="Search">
+              <input type="text" ng-model="search.text" placeholder="Search...">
+              <input type="submit" class="search_btn btn-default" ng-click="searchQuestions(search)" value="Search">
           </form>
       <!--</span>-->
       </div><!-- /.nav-collapse -->

@@ -9,7 +9,7 @@ angular.module("main").controller("loginController", function($scope, $rootScope
 		var UserClass = Parse.Object.extend("Users");
 		var query = new Parse.Query(UserClass);
 		
-		query.find({
+		query.find( {
 			success: function(results) {
 				console.log(results);
 				for (var i=0; i<results.length; i++) {
@@ -18,7 +18,8 @@ angular.module("main").controller("loginController", function($scope, $rootScope
 							$rootScope.user.username = $scope.loginInfo.username;
 							$rootScope.user.password = $scope.loginInfo.password;
 							$rootScope.user.loggedOn = true;
-						localStorage.loggedin = true;
+							localStorage.loggedin = true;
+							localStorage.username = $scope.loginInfo.username;
 							$rootScope.user.posts = results[i].get("posts");
 							$location.path('/');
 					}

@@ -15,6 +15,7 @@ function($scope, $routeParams) {
         var PostClass = Parse.Object.extend("Posts");
         var query = new Parse.Query(PostClass);
         var search = $routeParams.searchParams;
+        $scope.searchParam = search;
 
         query.find({
             success: function(results) {
