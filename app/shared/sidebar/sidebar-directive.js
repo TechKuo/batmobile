@@ -34,4 +34,9 @@
 		};
 			
 	};
+
+    angular.module("main").controller("activeController", function($scope) {
+
+    });
+
 })();
