@@ -26,6 +26,10 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: '/app/components/topic/topic-view.html',
             controller: 'topicController'
         })
+        .when('/search/:searchParams', {
+            templateUrl: '/app/components/result/result-view.html',
+            controller: 'resultController'
+        })
         .otherwise({
             redirectTo: '/'
         });
