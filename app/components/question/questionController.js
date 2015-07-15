@@ -1,4 +1,4 @@
-angular.module("main").controller("questionController", function($scope, $rootScope) {
+angular.module("main").controller("questionController", function($scope, $rootScope, $location) {
 	
 	$scope.id = "9bLx3Hv5Xb";
 	$scope.title = "";
@@ -56,7 +56,7 @@ angular.module("main").controller("questionController", function($scope, $rootSc
 		var newComment = new CommentClass();
 
 		newComment.set("text", $scope.newCommentText);
-		newComment.set("user", "am790d");
+		newComment.set("user", localStorage.username);
 		
 		newComment.save(null, {
 			success: function(result) {
